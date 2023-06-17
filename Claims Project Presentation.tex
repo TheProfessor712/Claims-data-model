@@ -1,0 +1,534 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+\def\re{{\mathbf {Re\,}}}
+\def\im{{\mathbf {Im\,}}}
+
+\newcommand{\imat}{\sqrt{-1}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\db}{\overline\partial}
+\newcommand{\ov}{\overline}
+\newcommand{\wi}{\widetilde}
+%------------------------------MathOperators-----------------------
+\DeclareMathOperator{\ric}{Ric}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\inte}{int}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\Span}{Span}
+%------------------------------Mathscr-------------------------------------
+\newcommand{\cali}[1]{\mathscr{#1}}
+\newcommand{\cO}{\cali{O}} \newcommand{\cI}{\cali{I}}
+\newcommand{\cM}{\cali{M}}\newcommand{\cT}{\cali{T}}
+\newcommand{\cC}{\cali{C}}\newcommand{\cA}{\cali{A}}
+%------------------------------Field-------------------------------------
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\Z}{\field{Z}}
+\newcommand{\R}{\field{R}}
+\newcommand{\C}{\field{C}}
+\newcommand{\N}{\field{N}}
+\newcommand{\T}{\field{T}}
+\newcommand{\Q}{\field{Q}}
+%------------------------------Misc-------------------------------------
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\mO}{\mathcal{O}}
+\newcommand{\Cdp}{\C^{d_p}}
+\newcommand{\hp}{H^0_{(2)}(X,L_p)}
+\newcommand{\eq}{{\rm eq}}
+\newcommand{\FS}{{{_\mathrm{FS}}}}
+
+\newcommand{\comment}[1]{}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+\title[University of Michigan - Ann Arbor]{Predicting Medicare Payments} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\title[Predicting Medicare Payments]{Predicting Medicare Payments} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{James J. Heffers} % Your name
+\institute[U(M)]
+{
+University of Michigan - Ann Arbor\\ % Your institution for the title page
+\medskip
+\textit{heffers@umich.edu} % Your email address
+}
+\date{6/15/2022} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%     Preliminaries     %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}
+%\frametitle{Preliminary Information}
+
+%We start by defining plurisubharmonic functions (psh).  First we must define what subharmonic functions are.
+
+%\bigskip
+
+%\pause
+
+%\textbf{Definition}  Let $D$ be a domain in $\mathbb{C}$.  A real valued function $u: D \rightarrow [-\infty, \infty)$ is called \textbf{subharmonic} if $u$ is upper semi-continuous and if it satisfies the subaveraging property, i.e. there is $\epsilon >0$ such that for all $r \in (0,\epsilon)$
+
+
+%$$u(z) \leq \frac{1}{2\pi} \int_{0}^{2\pi} u(z + re^{i\theta})\, d\theta .$$
+
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}
+%\frametitle{Preliminary Information}
+
+%\textbf{Definition}  Let $\Omega$ be a domain in $\mathbb{C}^n$.  A real valued function $u: \Omega \rightarrow [-\infty, \infty)$ is called \textbf{plurisubharmonic (psh)} if $u$ is upper semi-continuous and if for all $z\in \Omega$ and $a\in \mathbb{C}^n$, the function $v(\lambda) = u(z + a\lambda)$, $\lambda \in \mathbb{C}$, is subharmonic.  That is, restricted any complex line $L$, $u$ is subharmonic on $\Omega\cap L$.
+
+%\bigskip
+
+%\pause
+
+%\textbf{Example:}  Given any holomorphic function $f$, $\log|f|$ is psh. 
+
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}
+%\frametitle{Preliminary Information}
+
+%We start by defining plurisubharmonic functions (psh).  First we must define what subharmonic functions are.
+
+%\bigskip
+
+%\pause
+
+%\textbf{Definition}  Let $D$ be a domain in $\mathbb{C}$.  A real valued function $u: D \rightarrow [-\infty, \infty)$ is called \textbf{subharmonic} if $u$ is upper semi-continuous and if it satisfies the subaveraging property, i.e. there is $\epsilon >0$ such that for all $r \in (0,\epsilon)$
+
+
+%$$u(z) \leq \frac{1}{2\pi} \int_{0}^{2\pi} u(z + re^{i\theta})\, d\theta .$$
+
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}
+%\frametitle{Preliminary Information}
+
+%\textbf{Definition}  Let $\Omega$ be a domain in $\mathbb{C}^n$.  A real valued function $u: \Omega \rightarrow [-\infty, \infty)$ is called \textbf{plurisubharmonic (psh)} if $u$ is upper semi-continuous and if for all $z\in \Omega$ and $a\in \mathbb{C}^n$, the function $v(\lambda) = u(z + a\lambda)$, $\lambda \in \mathbb{C}$, is subharmonic.  That is, restricted any complex line $L$, $u$ is subharmonic on $\Omega\cap L$.
+
+%\bigskip
+
+%\pause
+
+%\textbf{Example:}  Given any holomorphic function $f$, $\log|f|$ is psh. 
+
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Introduction}
+
+\begin{itemize}
+
+\item Claims data contains a vast amount of billing records submitted by hospitals, physicians, and other sources for a wide breadth of services, such as physician visits, in/out patient procedures, days at a skilled nursing facility, prescriptions, and much more!
+
+\bigskip
+
+\item We wish to explore Medicare costs for patients with chronic conditions and in particular create a predictive model for the payments Medicare will make for Plan D beneficiaries based on their age range, sex, and what chronic conditions they have.
+
+\bigskip
+
+\item This presentation just shares methods, results, and insights. All processes/code can be found in the notebooks in the accompanying GitHub repository! There is also an accompanying R Shiny dashboard to share aggregated data for costs! Links are provided at end for convenience.
+
+\end{itemize}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Methodology}
+
+\begin{itemize}
+
+\item Data is collected from the Center for Medicare and Medicaid Services webpage (CMS.gov - link to data also provided at the end). 
+
+\item Perform data mining to understand what features we have, and how best to clean and prepare the data.
+
+\item Fit models and tune hyperparameters to find a strong model.
+
+\item Deploy the model as a real time inference pipeline on Microsoft Azure Platform and use it to predict costs for a new beneficiary.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+
+\frametitle{Understanding the data}
+
+\begin{itemize}
+
+\item Upon loading the data to our notebook, we first check where the null data is, and how much there is (there are 55 columns in the data frame, the below image only shows a few of the entries).
+
+
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=9cm]{nulldata}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+
+\frametitle{Understanding the data}
+
+\begin{itemize}
+
+\item We see that the ``less than 12 months" columns are missing vast amounts of data. However the number of beneficiaries in those situations is small, so in light of these two things we will drop those columns from our analysis. We also see that Plan C has almost no data (missing near $90\%$!) so we omit those columns next.
+
+\item The documentation for the CMS PUF data discusses ``suppressed" data. To limit the number of categories (rows), sometimes conditions are suppressed (left blank) so that more people can fit into the category. We see that the suppressed data is "small" (about $3.5\%$), and suppressed conditions are in the same rows! So we can easily drop those rows, and that still leaves us with over $21,000$ rows.
+
+\end{itemize}
+
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Understanding the Data}
+
+\begin{itemize}
+
+\item We have two more steps. First we use the describe() method to get information about the data frame statistics. We note the maximum value for plan D is staggering compared to the mean and standard deviation, so we wish to drop some of these extreme outliers. 
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=7cm]{PDstats}
+\end{figure}
+
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+
+\frametitle{Understanding the Data}
+
+\begin{itemize}
+
+\item We compute $\mu \pm 3\sigma$, and set these constraints on the Plan D costs column. This also drops any NaN rows in Plan D Costs column.
+
+\item The other columns are not going to be our target, so we will impute the missing values using SimpleImputer() with the mean method. 
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=10cm]{3sd}
+\end{figure}
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+\begin{itemize}
+
+\item First, as a sanity check, we run a quick designer pipeline in the Azure ML studio, using linear regression, and see what metrics are returned.
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=10cm]{pipeline}
+\end{figure}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+\begin{itemize}
+
+\item The MSE and RSquared are shown below, and it looks promising!
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=10cm]{outputofpipeline}
+\end{figure}
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+We will now revisit our notebook and run several models (e.g., Gradient Boosting, Random Forest, KNN) and tune hyperparameters. The below output shows the results. Gradient Boosting seems to be the strongest performing model. However we will do one more quick sanity check!
+
+\begin{figure}
+\includegraphics[width=10cm]{models}
+\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+\begin{itemize}
+
+\item We feed the cleaned data set into Azure AML, and after the process runs, it will report what was found to be the best performing model along with the metrics and feature importance. We see the output is a Gradient Boosting model (AML puts the best model at the top)!
+\bigskip
+
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=10cm]{XGBR}
+\end{figure}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+The model provided by Azure AML also has metrics very close to what we found in our investigation. This reassures us that a Gradient Boosting model is the best performing model for this data. We now register and deploy the model.
+
+\begin{figure}
+\includegraphics[width=9cm]{bestmodelscores}
+\end{figure}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Deployment}
+
+For the purpose of this project, we will simply deploy it as a real-time inference pipeline in an Azure Container Instance (ACI). We can now feed it data on a new beneficiary and see the predicted cost!
+
+\begin{figure}
+\includegraphics[width=9cm]{deployment}
+\end{figure}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Predicting}
+
+We now put in some test data: our test beneficiary is a female (Sex = 2) in the age range of 70-74 (Age = 3), with diabetes, osteoporosis, stroke, and is dual status eligible. We see that the prediction for the Medicare payment is roughly $\$5,500$.
+
+\begin{figure}
+\includegraphics[width=10cm]{prediction}
+\end{figure}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{The End!}
+
+Thanks for checking out my project! If you did not get this PDF from my GitHub, then the link to the corresponding repository containing all the code used is below. Additionally, you will also find the R Shiny code there, and the link to the online dashboard is provided as well!
+
+\bigskip
+\bigskip
+
+GitHub: https://github.com/TheProfessor712/Claims-data-model
+
+\smallskip
+
+R Shiny: https://theprofessor712.shinyapps.io/RShinyDash/
+
+
+
+
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+
+\frametitle{Source}
+
+The data for this project was pulled from CMS.gov. The link is below!
+
+\bigskip
+
+Data Source: 
+
+https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/BSAPUFS/Chronic\_Conditions\_PUF
+
+
+
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document} 
+
+
+%\begin{frame}
+%\frametitle{End}
+
+%\begin{thebibliography}{XXXXX}
+
+%\bibitem{C06} D. Coman, {\em Entire pluricomplex Green functions and Lelong numbers of projective currents}, Proc. Amer. Math. Soc. {\bf 134} (2006), 1927--1935.
+
+%\bibitem{CG09} D. Coman and V. Guedj, {\em Quasiplurisubharmonic Green functions}, J. Math. Pures Appl. (9) {\bf 92} (2009), 456--475.
+
+
+%\bibitem{CT15} D. Coman and T.T. Truong, {\em Geometric Properties of Upper Level Sets of Lelong Numbers on Projective Spaces}, Math. Ann. {\bf 361} (2015), 981--994.
+
+%\end{thebibliography}
+%\end{frame}
+
